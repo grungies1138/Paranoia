@@ -1,0 +1,234 @@
+<form class="{{cssClass}} {{actor.type}} flexcol sheet" autocomplete="off" style="background-color: white;">
+  {{!-- Sheet Header --}}
+  <h1 class="light-bg dark title">Alpha Complex Identity Form</h1>
+  <h3 class="warning">THIS FORM IS MANDATORY</h3>
+  <div class="sheet-section flexrow">
+    <div class="dark-bg sheet-section-header"><span style="color: white;">/// PART ONE</span></div>
+    <div class="light-bg dark sheet-section-header-body">CORE INFORMATION >>></div>
+  </div>
+  <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+    <div class="header-fields">
+      <h1 class="charname">{{actor.name}}-{{data.sector}}</h1>
+      <h3 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h3>
+      {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
+      use both the "grid" and "grid-Ncol" class where "N" can be any number
+      from 1 to 12 and will create that number of columns.  --}}
+      <div class="resources grid grid-3col">
+
+        {{!-- "flex-group-center" is also defined in the _grid.scss file
+        and it will add a small amount of padding, a border, and will
+        center all of its child elements content and text. --}}
+        <div class="resource flex-group-center">
+          <label for="data.clearance" class="resource-label">Security Clearance</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="data.clearance" value="{{data.clearance}}"/>
+          </div>
+        </div>
+        <div class="resource flex-group-center">
+          <label for="data.sector" class="resource-label">Sector</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="data.sector" value="{{data.sector}}"/>
+          </div>
+        </div>
+        <div class="resource flex-group-center">
+          <label for="data.clone" class="resource-label">Clone</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="data.clone" value="{{data.clone}}" data-dtype="Number"/>
+          </div>
+        </div>
+        <div class="resource flex-group-center grid-span-3">
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <div class="sheet-section flexrow">
+      <div class="dark-bg sheet-section-header"><span style="color: white;">/// PART TWO</span></div>
+      <div class="light-bg dark sheet-section-header-body">DEVELOPMENT >>></div>
+    </div>
+
+    <div class="resources grid grid-2col">
+      <div class="resource flex-group-center">
+        <label for="data.core.treason" class="resource-label">Treason Stars</label>
+        <div class="light-border stars" name="data.core.treason">
+          <span class="fa fa-star fa-lg checked"></span>
+          <span class="fa fa-star fa-lg"></span>
+          <span class="fa fa-star fa-lg"></span>
+          <span class="fa fa-star fa-lg"></span>
+          <span class="fa fa-star fa-lg"></span>
+        </div>
+      </div>
+      <div class="resource flex-group-center">
+        <label for="data.xp" class="resource-label">XP Points</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="data.xp" value="{{data.xp}}" data-dtype="Number" />
+        </div>
+      </div>
+    </div>
+    <div class="resources grid grid-4col">
+      <div class="dark-bg light grid-span-4">STATS >>></div>
+      <div class="resource flex-group-center">
+        <label for="data.stats.violence" class="resource-label rollable" data-roll="data.stats.violence" data-label="violence">Violence</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="data.stats.violence" value="{{data.stats.violence}}" data-dtype="Number" />
+        </div>
+      </div>
+      <div class="resource flex-group-center">
+        <label for="data.stats.brains" class="resource-label">Brains</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="data.stats.brains" value="{{data.stats.brains}}" data-dtype="Number" />
+        </div>
+      </div>
+      <div class="resource flex-group-center">
+        <label for="data.stats.chutzpah" class="resource-label">Chutzpah</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="data.stats.chutzpah" value="{{data.stats.chutzpah}}" data-dtype="Number" />
+        </div>
+      </div>
+      <div class="resource flex-group-center">
+        <label for="data.stats.mechanics" class="resource-label">Mechanics</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="data.stats.mechanics" value="{{data.stats.mechanics}}" data-dtype="Number" />
+        </div>
+      </div>
+    </div>
+
+    <div class="sheet-section flexrow">
+      <div class="dark-bg sheet-section-header"><span style="color: white;">/// PART THREE</span></div>
+      <div class="light-bg dark sheet-section-header-body">SKILLS >>></div>
+    </div>
+
+    <div class="resources grid grid-4col">
+      <div class="resource flex-group-center">
+        <label for="data.skills.athletics" class="resource-label">Athletics</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="data.skills.athletics" value="{{data.skills.athletics}}" data-dtype="Number" />
+        </div>
+      </div>
+      <div class="resource flex-group-center">
+        <label for="data.skills.science" class="resource-label">Science</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="data.skills.science" value="{{data.skills.science}}" data-dtype="Number" />
+        </div>
+      </div>
+      <div class="resource flex-group-center">
+        <label for="data.skills.bluff" class="resource-label">Bluff</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="data.skills.bluff" value="{{data.skills.bluff}}" data-dtype="Number" />
+        </div>
+      </div>
+      <div class="resource flex-group-center">
+        <label for="data.skills.operate" class="resource-label">Operate</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="data.skills.operate" value="{{data.skills.operate}}" data-dtype="Number" />
+        </div>
+      </div>
+    </div>
+
+    <div class="resources grid grid-4col">
+      <div class="resource flex-group-center">
+        <label for="data.skills.guns" class="resource-label">Guns</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="data.skills.guns" value="{{data.skills.guns}}" data-dtype="Number" />
+        </div>
+      </div>
+      <div class="resource flex-group-center">
+        <label for="data.skills.psychology" class="resource-label">Psychology</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="data.skills.psychology" value="{{data.skills.psychology}}" data-dtype="Number" />
+        </div>
+      </div>
+      <div class="resource flex-group-center">
+        <label for="data.skills.charm" class="resource-label">Charm</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="data.skills.charm" value="{{data.skills.charm}}" data-dtype="Number" />
+        </div>
+      </div>
+      <div class="resource flex-group-center">
+        <label for="data.skills.engineer" class="resource-label">Engineer</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="data.skills.engineer" value="{{data.skills.engineer}}" data-dtype="Number" />
+        </div>
+      </div>
+    </div>
+
+    <div class="resources grid grid-4col">
+      <div class="resource flex-group-center">
+        <label for="data.skills.melee" class="resource-label">Melee</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="data.skills.melee" value="{{data.skills.melee}}" data-dtype="Number" />
+        </div>
+      </div>
+      <div class="resource flex-group-center">
+        <label for="data.skills.bureaucracy" class="resource-label">Bureaucracy</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="data.skills.bureaucracy" value="{{data.skills.bureaucracy}}" data-dtype="Number" />
+        </div>
+      </div>
+      <div class="resource flex-group-center">
+        <label for="data.skills.intimidate" class="resource-label">Intimidate</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="data.skills.intimidate" value="{{data.skills.intimidate}}" data-dtype="Number" />
+        </div>
+      </div>
+      <div class="resource flex-group-center">
+        <label for="data.skills.program" class="resource-label">Program</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="data.skills.program" value="{{data.skills.program}}" data-dtype="Number" />
+        </div>
+      </div>
+    </div>
+
+    <div class="resources grid grid-4col">
+      <div class="resource flex-group-center">
+        <label for="data.skills.throw" class="resource-label">Throw</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="data.skills.throw" value="{{data.skills.throw}}" data-dtype="Number" />
+        </div>
+      </div>
+      <div class="resource flex-group-center">
+        <label for="data.skills.alpha_complex" class="resource-label">Alpha Complex</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="data.skills.alpha_complex" value="{{data.skills.alpha_complex}}" data-dtype="Number" />
+        </div>
+      </div>
+      <div class="resource flex-group-center">
+        <label for="data.skills.stealth" class="resource-label">Stealth</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="data.skills.stealth" value="{{data.skills.stealth}}" data-dtype="Number" />
+        </div>
+      </div>
+      <div class="resource flex-group-center">
+        <label for="data.skills.demolitions" class="resource-label">Demolitions</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="data.skills.demolitions" value="{{data.skills.demolitions}}" data-dtype="Number" />
+        </div>
+      </div>
+    </div>
+
+    <div class="sheet-section flexrow">
+      <div class="dark-bg sheet-section-header"><span style="color: white;">/// PART FOUR</span></div>
+      <div class="light-bg dark sheet-section-header-body">WELLBEING >>></div>
+    </div>
+
+    <div class="resources grid grid-2col">
+      <div class="resource flex-group-center">
+        <label for="data.moxie" class="resource-label">Moxie</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="data.moxie" value="{{data.moxie}}" data-dtype="Number" />
+        </div>
+      </div>
+      <div class="resource flex-group-center">
+        <label for="data.wounds" class="resource-label">Wounds</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="data.wounds" value="{{data.wounds}}" data-dtype="Number" />
+        </div>
+      </div>
+    </div>
+  </section>
+</form>
+
